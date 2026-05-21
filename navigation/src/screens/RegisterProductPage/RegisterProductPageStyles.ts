@@ -1,0 +1,96 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+    container: {
+        padding: 24,
+        backgroundColor: "#fff",
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: "bold",
+        color: "#007680",
+        marginBottom: 4,
+        marginTop: 20,
+    },
+    subtitle: {
+        fontSize: 14,
+        color: "#555",
+        marginBottom: 20,
+    },
+    label: {
+        fontSize: 13,
+        fontWeight: "600",
+        color: "#222",
+        marginBottom: 6,
+        marginTop: 14,
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: "#CCCCCC",
+        borderRadius: 8,
+        paddingHorizontal: 14,
+        paddingVertical: 11,
+        fontSize: 14,
+        color: "#222",
+        backgroundColor: "#F9F9F9",
+    },
+    row: {
+        flexDirection: "row",
+        gap: 10,
+    },
+    halfContainer: {
+        flex: 1,
+    },
+    currencyContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        borderWidth: 1,
+        borderColor: "#CCCCCC",
+        borderRadius: 8,
+        backgroundColor: "#F9F9F9",
+        paddingHorizontal: 14,
+    },
+    currencySign: {
+        fontSize: 14,
+        color: "#222",
+        marginRight: 4,
+    },
+    currencyInput: {
+        flex: 1,
+        paddingVertical: 11,
+        fontSize: 14,
+        color: "#222",
+    },
+    textarea: {
+        borderWidth: 1,
+        borderColor: "#CCCCCC",
+        borderRadius: 8,
+        paddingHorizontal: 14,
+        paddingVertical: 11,
+        fontSize: 14,
+        color: "#222",
+        backgroundColor: "#F9F9F9",
+        height: 100,
+        textAlignVertical: "top",
+    },
+    createButton: {
+        backgroundColor: "#007680",
+        padding: 14,
+        borderRadius: 8,
+        alignItems: "center",
+        marginTop: 28,
+        marginBottom: 16,
+    },
+    createButtonText: {
+        color: "#fff",
+        fontWeight: "700",
+        fontSize: 15,
+    },
+    backText: {
+        textAlign: "center",
+        color: "#ef7f00",
+        fontWeight: "600",
+        fontSize: 14,
+        marginBottom: 20,
+    },
+});

@@ -1,25 +1,40 @@
 import React from "react";
+import { Alert } from "react-native";
 import { AuthTemplate } from "../../components/templates";
-import { RegisterForm } from "../../components/organisms";
+import { LoginForm } from "../../components/organisms";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { AuthStackParamList } from "../../Routes";
+import { AuthService } from "../../core/services";
 
-const RegisterPage = () => {
+const LoginPage = () => {
     const navigation = useNavigation<NativeStackNavigationProp<AuthStackParamList>>();
 
-    const handleRegister = () => {
-        console.log("Tap en Registro");
-        navigation.navigate("Login");
+    const loginAction = (username: string, password: string) => {
+        try {
+            const user = AuthService.login(username, password);
+            console.log("Usuario logueado:", user);
+            navigation.navigate("Dashboard");
+        } catch (error) {
+            Alert.alert("❌ Error", "Usuario o contraseña incorrectos");
+            console.error("Error al iniciar sesión:", error);
+        }
+    }
+
+    const handleGoToRegister = () => {
+        navigation.navigate("Register");
     }
 
     return (
         <AuthTemplate
-            title="Register"
-            subtitle="Create a new account">
-            <RegisterForm onSubmit={handleRegister} />
+            title="LOGIN"
+            subtitle="Welcome back">
+            <LoginForm
+                onSubmit={loginAction}
+                onSignUp={handleGoToRegister}
+            />
         </AuthTemplate>
     )
 }
 
-export default RegisterPage;
+export default LoginPage;
